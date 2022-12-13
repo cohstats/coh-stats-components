@@ -7,7 +7,7 @@ module.exports = {
   githubRepo: 'coh-stats-components',
 
   // Package repository url, must be without trailing slash
-  repositoryUrl: 'https://github.com/cohstats/coh-stats-components ',
+  repositoryUrl: 'https://github.com/cohstats/coh-stats-components',
 
   // Your name or nickname
   author: 'Johannes Merkt',

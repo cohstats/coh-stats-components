@@ -12,13 +12,9 @@
     }
   },
   "scripts": {
-    "prepare": "npm run docgen && cd docs && yarn",
-    "docgen": "esno scripts/docgen/docgen",
     "nojekyll": "esno scripts/nojekyll",
-    "dev": "cd docs && npm run dev",
-    "start": "cd docs && npm run dev",
     "storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 7534 -c .config/.storybook",
-    "typecheck": "tsc --noEmit && cd docs && npm run typecheck",
+    "typecheck": "tsc --noEmit",
     "lint": "eslint src --cache",
     "jest": "jest",
     "prettier:test": "prettier --check \"**/*.{ts,tsx}\"",
@@ -31,18 +27,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rtivital/mantine-extension-template.git"
+    "url": "git+https://github.com/cohstats/coh-stats-components.git"
   },
   "keywords": [
     "mantine",
     "extension"
   ],
-  "author": "Vitaly Rtishchev <rtivital@gmail.com>",
+  "author": "Johannes Merkt",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/rtivital/mantine-extension-template/issues"
-  },
-  "homepage": "https://github.com/rtivital/mantine-extension-template#readme",
+  "homepage": "https://github.com/cohstats/coh-stats-components#readme",
   "peerDependencies": {
     "@emotion/react": ">=11.9.0",
     "@mantine/core": ">=5.0.0",
@@ -115,6 +108,6 @@
     "yargs": "^17.5.1"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@dalenguyen"
+    "registry": "https://npm.pkg.github.com/@cohstats"
   }
 }
