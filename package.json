@@ -23,7 +23,8 @@
     "build": "rollup --config .config/rollup.config.js",
     "release:patch": "npm test && npm run build && esno scripts/release patch",
     "release:minor": "npm test && npm run build && esno scripts/release minor",
-    "release:major": "npm test && npm run build && esno scripts/release major"
+    "release:major": "npm test && npm run build && esno scripts/release major",
+    "deploy": "npm publish"
   },
   "repository": {
     "type": "git",
