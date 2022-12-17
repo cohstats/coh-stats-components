@@ -23,5 +23,7 @@ jobs:
     - name: Authenticate with NPM registry
       run: echo "//npm.pkg.github.com:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
     - name: publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        npm run deploy
+        npm publish
