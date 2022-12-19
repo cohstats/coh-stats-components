@@ -27,7 +27,7 @@ e.g.
     "coh-stats-components": "github:cohstats/coh-stats-components#0.0.1"
 }
 ```
-- Install the package with ``yarn install``
+- Install the package with ``yarn``
 
 ## Testing scripts
 
