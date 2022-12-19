@@ -111,6 +111,6 @@
     "registry": "https://npm.pkg.github.com/@cohstats"
   },
   "pre-commit": [
-    "build"
+    "build" 
   ]
 }
