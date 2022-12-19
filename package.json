@@ -42,7 +42,6 @@
     "@mantine/core": ">=5.0.0",
     "@mantine/hooks": ">=5.0.0"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.18.9",
     "@emotion/react": "^11.9.3",
@@ -110,5 +109,8 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@cohstats"
-  }
+  },
+  "pre-commit": [
+    "build"
+  ]
 }
