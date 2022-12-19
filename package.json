@@ -40,7 +40,9 @@
   "peerDependencies": {
     "@emotion/react": ">=11.9.0",
     "@mantine/core": ">=5.0.0",
-    "@mantine/hooks": ">=5.0.0",
+    "@mantine/hooks": ">=5.0.0"
+  },
+  "dependencies": {
     "@tabler/icons": "^1.117.0"
   },
   "devDependencies": {
