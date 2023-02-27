@@ -44,12 +44,90 @@ function t(){return t=Object.assign?Object.assign.bind():function(e){for(var t=1
 
 function ColorSchemeToggle() {
     const { colorScheme, toggleColorScheme } = core.useMantineColorScheme();
-    return (e__default["default"].createElement(IconButton, { label: colorScheme === "dark" ? "Light mode" : "Dark mode", onClick: () => toggleColorScheme(), sx: (theme) => ({
-            backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[0],
-            color: theme.colorScheme === "dark" ? theme.colors.yellow[4] : theme.colors.blue[6],
-        }) }, colorScheme === "dark" ? (e__default["default"].createElement(lIe, { size: 20, stroke: 1.5 })) : (e__default["default"].createElement(Uve, { size: 20, stroke: 1.5 }))));
+    return (e__default["default"].createElement(IconButton, { label: colorScheme === 'dark' ? 'Light mode' : 'Dark mode', onClick: () => toggleColorScheme(), sx: (theme) => ({
+            backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+            color: theme.colorScheme === 'dark' ? theme.colors.yellow[4] : theme.colors.blue[6],
+        }) }, colorScheme === 'dark' ? (e__default["default"].createElement(lIe, { size: 20, stroke: 1.5 })) : (e__default["default"].createElement(Uve, { size: 20, stroke: 1.5 }))));
 }
+
+const PlayerLosses = ({ losses }) => {
+    let content = '-';
+    let color;
+    if (losses !== undefined && losses !== null) {
+        const lossesNumber = Number(losses);
+        if (!isNaN(lossesNumber) && lossesNumber >= 0) {
+            content = lossesNumber + 'L';
+            color = 'red';
+        }
+    }
+    return (e__default["default"].createElement(e__default["default"].Fragment, null,
+        e__default["default"].createElement(core.Text, { color: color }, content)));
+};
+
+const PlayerWins = ({ wins }) => {
+    let content = '-';
+    let color;
+    if (wins !== undefined && wins !== null) {
+        const winsNumber = Number(wins);
+        if (!isNaN(winsNumber) && winsNumber >= 0) {
+            content = winsNumber + 'W';
+            color = 'green';
+        }
+    }
+    return (e__default["default"].createElement(e__default["default"].Fragment, null,
+        e__default["default"].createElement(core.Text, { color: color }, content)));
+};
+
+const PlayerWinRatio = ({ wins, losses }) => {
+    let content = '-';
+    if (wins !== undefined && wins !== null && losses !== undefined && losses !== null) {
+        const winsNumber = Number(wins);
+        const lossesNumber = Number(losses);
+        if (!isNaN(winsNumber) && winsNumber >= 0 && !isNaN(lossesNumber) && lossesNumber >= 0 && (lossesNumber + winsNumber > 0)) {
+            content = ((winsNumber / (winsNumber + lossesNumber)) * 100).toFixed(0) + '%';
+        }
+    }
+    return (e__default["default"].createElement(e__default["default"].Fragment, null,
+        e__default["default"].createElement(core.Text, null, content)));
+};
+
+const PlayerRank = ({ rank }) => {
+    let content = '-';
+    if (rank !== undefined && rank !== null) {
+        const rankNumber = Number(rank);
+        if (!isNaN(rankNumber) && rankNumber > -1) {
+            content = '#' + rankNumber;
+        }
+    }
+    return (e__default["default"].createElement(e__default["default"].Fragment, null,
+        e__default["default"].createElement(core.Text, null, content)));
+};
+
+const PlayerStreak = ({ streak }) => {
+    let content = '-';
+    let color;
+    if (streak !== undefined && streak !== null) {
+        const streakNumber = Number(streak);
+        if (!isNaN(streakNumber)) {
+            content = '' + streakNumber;
+            if (streakNumber > 0) {
+                color = 'green';
+                content = '+' + streakNumber;
+            }
+            if (streakNumber < 0) {
+                color = 'red';
+            }
+        }
+    }
+    return (e__default["default"].createElement(e__default["default"].Fragment, null,
+        e__default["default"].createElement(core.Text, { color: color }, content)));
+};
 
 exports.ColorSchemeToggle = ColorSchemeToggle;
 exports.IconButton = IconButton;
+exports.PlayerLosses = PlayerLosses;
+exports.PlayerRank = PlayerRank;
+exports.PlayerStreak = PlayerStreak;
+exports.PlayerWinRatio = PlayerWinRatio;
+exports.PlayerWins = PlayerWins;
 exports.TestComponent = TestComponent;
