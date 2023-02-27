@@ -1,5 +1,5 @@
-import { ActionIcon, Sx, Tooltip } from "@mantine/core";
-import React, { MouseEventHandler } from "react";
+import { ActionIcon, Sx, Tooltip } from '@mantine/core';
+import React, { MouseEventHandler } from 'react';
 
 export interface IconButtonProps {
   label: React.ReactNode;
